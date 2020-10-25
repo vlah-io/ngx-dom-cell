@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../../ngx-dom-cell/src/assets/css/ngx-dom-cell.css";
+@import "../../ngx-dom-cell/src/assets/css/ngx-dom-cell-various.css";
+@import "../../ngx-dom-cell/src/assets/css/ngx-dom-cell-table.css";
+
+.size-2 {
+    font-size: 2rem;
+}
+
+table.k-t-r td {
+    border: 1px solid rgba(0, 0, 0, .1) !important;
+}

@@ -1,0 +1,388 @@
+@charset "UTF-8";
+/** format */
+.vlahio-money, .vlahio-mn {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-money, .t-r td.vlahio-mn {
+  display: table-cell !important;
+}
+
+.vlahio-money:before, .vlahio-mn:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-money:before, .t-r td.vlahio-mn:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-number, .vlahio-nr {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-number, .t-r td.vlahio-nr {
+  display: table-cell !important;
+}
+
+.vlahio-number:before, .vlahio-nr:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-number:before, .t-r td.vlahio-nr:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-square-feet, .vlahio-sq-ft {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-square-feet, .t-r td.vlahio-sq-ft {
+  display: table-cell !important;
+}
+
+.vlahio-square-feet:before, .vlahio-sq-ft:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-square-feet:before, .t-r td.vlahio-sq-ft:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-square-metre, .vlahio-sq-mt {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-square-metre, .t-r td.vlahio-sq-mt {
+  display: table-cell !important;
+}
+
+.vlahio-square-metre:before, .vlahio-sq-mt:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-square-metre:before, .t-r td.vlahio-sq-mt:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-year, .vlahio-yr {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-year, .t-r td.vlahio-yr {
+  display: table-cell !important;
+}
+
+.vlahio-year:before, .vlahio-yr:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-year:before, .t-r td.vlahio-yr:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-years, .vlahio-yr-s {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-years, .t-r td.vlahio-yr-s {
+  display: table-cell !important;
+}
+
+.vlahio-years:before, .vlahio-yr-s:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-years:before, .t-r td.vlahio-yr-s:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-month, .vlahio-mo {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-month, .t-r td.vlahio-mo {
+  display: table-cell !important;
+}
+
+.vlahio-month:before, .vlahio-mo:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-month:before, .t-r td.vlahio-mo:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-day, .vlahio-dy {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-day, .t-r td.vlahio-dy {
+  display: table-cell !important;
+}
+
+.vlahio-day:before, .vlahio-dy:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-day:before, .t-r td.vlahio-dy:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-days, .vlahio-dy-s {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-days, .t-r td.vlahio-dy-s {
+  display: table-cell !important;
+}
+
+.vlahio-days:before, .vlahio-dy-s:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-days:before, .t-r td.vlahio-dy-s:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-calendar, .vlahio-cl {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 30px;
+}
+
+.t-r td.vlahio-calendar, .t-r td.vlahio-cl {
+  display: table-cell !important;
+}
+
+.vlahio-calendar:before, .vlahio-cl:before {
+  float: left !important;
+  color: #b0c4de;
+  margin-left: -30px;
+}
+
+.t-r td.vlahio-calendar:before, .t-r td.vlahio-cl:before {
+  margin-left: 0;
+  padding-right: 2px;
+}
+
+.vlahio-percent, .vlahio-pc {
+  display: block !important;
+  text-align: right !important;
+  padding-right: 12px;
+}
+
+.vlahio-percent:after, .vlahio-pc:after {
+  float: right !important;
+  color: #b0c4de;
+  margin-right: -12px;
+}
+
+.t-r td.vlahio-percent:after, .t-r td.vlahio-pc:after {
+  margin-right: 0;
+  padding-left: 2px;
+}
+
+.vlahio-per-thousand, .vlahio-pth {
+  display: block !important;
+  text-align: right !important;
+  padding-right: 12px;
+}
+
+.vlahio-per-thousand:after, .vlahio-pth:after {
+  float: right !important;
+  color: #b0c4de;
+  margin-right: -12px;
+}
+
+.t-r td.vlahio-per-thousand:after, .t-r td.vlahio-pth:after {
+  margin-right: 0;
+  padding-left: 2px;
+}
+
+.vlahio-format, .vlahio-fm {
+  display: block !important;
+}
+
+.vlahio-format-right, .vlahio-fm-r {
+  display: block !important;
+  text-align: right !important;
+}
+
+.vlahio-format-center, .vlahio-fm-c {
+  display: block !important;
+  text-align: center !important;
+}
+
+.vlahio-money-dollar::before, .vlahio-mn-dollar::before {
+  content: "$ " !important;
+}
+
+.vlahio-money-usd::before, .vlahio-mn-usd::before {
+  content: "$ " !important;
+}
+
+.vlahio-money-pound::before, .vlahio-mn-pound::before {
+  content: "£ " !important;
+}
+
+.vlahio-money-gbp::before, .vlahio-mn-gbp::before {
+  content: "£ " !important;
+}
+
+.vlahio-money-euro::before, .vlahio-mn-euro::before {
+  content: "€ " !important;
+}
+
+.vlahio-money-eur::before, .vlahio-mn-eur::before {
+  content: "€ " !important;
+}
+
+.vlahio-money-bgn::before, .vlahio-mn-bgn::before {
+  content: "лв " !important;
+}
+
+.vlahio-money-hrk::before, .vlahio-mn-hrk::before {
+  content: "kn " !important;
+}
+
+.vlahio-money-czk::before, .vlahio-mn-czk::before {
+  content: "Kč " !important;
+}
+
+.vlahio-money-dkk::before, .vlahio-mn-dkk::before {
+  content: "kr. " !important;
+}
+
+.vlahio-money-huf::before, .vlahio-mn-huf::before {
+  content: "Ft " !important;
+}
+
+.vlahio-money-isk::before, .vlahio-mn-isk::before {
+  content: "Íkr " !important;
+}
+
+.vlahio-money-chf::before, .vlahio-mn-chf::before {
+  content: "CHF " !important;
+}
+
+.vlahio-money-nok::before, .vlahio-mn-nok::before {
+  content: "kr, – " !important;
+}
+
+.vlahio-money-pln::before, .vlahio-mn-pln::before {
+  content: "zł " !important;
+}
+
+.vlahio-money-rub::before, .vlahio-mn-rub::before {
+  content: "₽ " !important;
+}
+
+.vlahio-money-sek::before, .vlahio-mn-sek::before {
+  content: "kr " !important;
+}
+
+.vlahio-money-try::before, .vlahio-mn-try::before {
+  content: "₺ " !important;
+}
+
+.vlahio-money-uah::before, .vlahio-mn-uah::before {
+  content: "₴ " !important;
+}
+
+.vlahio-money-ron::before, .vlahio-mn-ron::before {
+  content: "RON " !important;
+}
+
+.vlahio-number::before, .vlahio-nr::before {
+  content: "N°" !important;
+}
+
+.vlahio-square-feet::before, .vlahio-sq-ft::before {
+  content: "Sq ft " !important;
+}
+
+.vlahio-square-metre::before, .vlahio-sq-mt::before {
+  content: "Sq mt " !important;
+}
+
+.vlahio-year::before, .vlahio-yr::before {
+  content: "Year " !important;
+}
+
+.vlahio-years::before, .vlahio-yr-s::before {
+  content: "Years " !important;
+}
+
+.vlahio-month::before, .vlahio-mo::before {
+  content: "mo. " !important;
+}
+
+.vlahio-day::before, .vlahio-dy::before {
+  content: "Day " !important;
+}
+
+.vlahio-days::before, .vlahio-dy-s::before {
+  content: "Days " !important;
+}
+
+.vlahio-calendar::before, .vlahio-cl::before {
+  content: url(../img/datepicker_icon.jpg) !important;
+  opacity: 0.2 !important;
+}
+
+.vlahio-percent::after, .vlahio-pc::after {
+  content: " %" !important;
+  color: #DE8AB4 !important;
+}
+
+.vlahio-per-thousand::after, .vlahio-pth::after {
+  content: " ‰" !important;
+  color: #DE8AB4 !important;
+}
+
+/*# sourceMappingURL=ngx-dom-cell.css.map */

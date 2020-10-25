@@ -1,0 +1,138 @@
+/** format */
+@each $f, $format in (mn, money),
+  (nr, number),
+  (sq-ft, square-feet),
+  (sq-mt, square-metre),
+  (yr, year),
+  (yr-s, years),
+  (mo, month),
+  (dy, day),
+  (dy-s, days),
+  (cl, calendar) {
+
+  .vlahio-#{$format}, .vlahio-#{$f} {
+    display: block !important;
+    text-align: right !important;
+    padding-left: 30px;
+  }
+
+  .t-r td.vlahio-#{$format}, .t-r td.vlahio-#{$f} {
+    display: table-cell !important;
+  }
+
+  .vlahio-#{$format}:before, .vlahio-#{$f}:before {
+    float: left !important;
+    color: #b0c4de;
+    margin-left: -30px;
+  }
+
+  .t-r td.vlahio-#{$format}:before, .t-r td.vlahio-#{$f}:before {
+    margin-left: 0;
+    padding-right: 2px;
+  }
+}
+
+@each $f, $format in (pc, percent), (pth, per-thousand) {
+  .vlahio-#{$format}, .vlahio-#{$f} {
+    display: block !important;
+    text-align: right !important;
+    padding-right: 12px;
+  }
+
+  .vlahio-#{$format}:after, .vlahio-#{$f}:after {
+    float: right !important;
+    color: #b0c4de;
+    margin-right: -12px;
+  }
+
+  .t-r td.vlahio-#{$format}:after, .t-r td.vlahio-#{$f}:after {
+    margin-right: 0;
+    padding-left: 2px;
+  }
+}
+
+.vlahio-format, .vlahio-fm {
+  display: block !important;
+}
+
+.vlahio-format-right, .vlahio-fm-r {
+  display: block !important;
+  text-align: right !important;
+}
+
+.vlahio-format-center, .vlahio-fm-c {
+  display: block !important;
+  text-align: center !important;
+}
+
+@each $symbol, $currency in ('$ ', dollar),
+  ('$ ', usd),
+  ('\00A3\20', pound),
+  ('\00A3\20', gbp),
+  ('\20AC\20', euro),
+  ('\20AC\20', eur),
+  ('\43b\432\20', bgn),
+  ('\6b\6e\20', hrk),
+  ('\4b\10d\20', czk),
+  ('\6b\72\2e\20', dkk),
+  ('\46\74\20', huf),
+  ('\cd\6b\72\20', isk),
+  ('\43\48\46\20', chf),
+  ('\6b\72\2c\20\2013\20', nok),
+  ('\7a\142\20', pln),
+  ('\20bd\20', rub),
+  ('\6b\72\20', sek),
+  ('\20ba\20', try),
+  ('\20b4\20', uah),
+  ('\52\4f\4e\20', ron) {
+  .vlahio-money-#{$currency}::before, .vlahio-mn-#{$currency}::before {
+    content: $symbol !important;
+  }
+}
+
+.vlahio-number::before, .vlahio-nr::before {
+  content: 'N\00B0 ' !important;
+}
+
+.vlahio-square-feet::before, .vlahio-sq-ft::before {
+  content: 'Sq ft ' !important;
+}
+
+.vlahio-square-metre::before, .vlahio-sq-mt::before {
+  content: 'Sq mt ' !important;
+}
+
+.vlahio-year::before, .vlahio-yr::before {
+  content: 'Year ' !important;
+}
+
+.vlahio-years::before, .vlahio-yr-s::before {
+  content: 'Years ' !important;
+}
+
+.vlahio-month::before, .vlahio-mo::before {
+  content: 'mo. ' !important;
+}
+
+.vlahio-day::before, .vlahio-dy::before {
+  content: 'Day ' !important;
+}
+
+.vlahio-days::before, .vlahio-dy-s::before {
+  content: 'Days ' !important;
+}
+
+.vlahio-calendar::before, .vlahio-cl::before {
+  content: url(../img/datepicker_icon.jpg) !important;
+  opacity: .2 !important;
+}
+
+.vlahio-percent::after, .vlahio-pc::after {
+  content: ' %' !important;
+  color: #DE8AB4 !important;
+}
+
+.vlahio-per-thousand::after, .vlahio-pth::after {
+  content: ' \2030' !important;
+  color: #DE8AB4 !important;
+}

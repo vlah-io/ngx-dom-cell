@@ -1,0 +1,42 @@
+.vlahio-arrow-container {
+  display: inline-block;
+  height: 14px;
+}
+
+.vlahio-arrow-icon {
+  position: absolute;
+  width: 1px;
+  height: 14px;
+  background-color: currentColor;
+}
+.up.vlahio-arrow-icon {
+  margin-top: 3px;
+  color: #48bb78;
+}
+.up.vlahio-arrow-icon:before {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.down.vlahio-arrow-icon {
+  margin-top: 2px;
+  color: #e53e3e;
+}
+.down.vlahio-arrow-icon:before {
+  top: 9px;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.up.vlahio-arrow-icon:before, .down.vlahio-arrow-icon:before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  border-top: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+}
+
+/*# sourceMappingURL=ngx-dom-cell-various.css.map */

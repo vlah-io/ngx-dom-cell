@@ -1,27 +1,83 @@
-# NgxDomCell
+@vlah.io/ngx-dom-cell
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Set of reusable Angular components to display table cell's.
 
-## Development server
+### Usage (code example)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+    <span [vlahioCalendarCell]="'12/05/2019'"></span>
+    <span [vlahioNumberCell]="60.54"> </span>
+    <span [vlahioSquareFeetCell]="58.25"></span>
+    <span [vlahioTextCell]="'YES'"></span>
+    <span [vlahioYearCell]="2019"></span>
+    <span [vlahioYearsCell]="24"></span>
+    <span [vlahioDaysCell]="4"></span>
+    <span [vlahioMonthCell]="6"></span>
+    <span [vlahioMonthCell]="'December'"></span>
+    <span [vlahioDayCell]="24"></span>
+    <span [vlahioDayCell]="'Monday'"></span>
+    <span [vlahioPercentCell]="6.5"></span>
+    <span [vlahioPercentCell]="'6.5'"></span>
+    <span [vlahioPerThousandCell]="24.2"></span>
+    <span [vlahioPerThousandCell]="'24.2'" [trend]="-100"></span>
+    <span [vlahioTextCell]="'left'" [cls]="'vlahio-fm'"></span>
+    <span [vlahioTextCell]="'center'" [cls]="'vlahio-fm vlahio-fm-c'"></span>
+    <span [vlahioTextCell]="'right'" [cls]="'vlahio-fm vlahio-fm-r'"></span>
+    <span [vlahioUsdCurrencyCell]="1825.5656" [digits]="3" [trend]="trend"></span>
+    <span [vlahioGbpCurrencyCell]="1825.56"></span>
+    <span [vlahioEurCurrencyCell]="1825.56"> </span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-ron'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-chf'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-bgn'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-hrk'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-czk'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-dkk'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-huf'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-isk'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-nok'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-pln'"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-rub'"></span>
+    <span [vlahioCurrencyCell]="1825.5656" [cls]="'vlahio-mn-sek'" [digits]="3"></span>
+    <span [vlahioCurrencyCell]="-1825.56" [cls]="'vlahio-mn-try'" [trend]="trend"></span>
+    <span [vlahioCurrencyCell]="1825.56" [cls]="'vlahio-mn-uah'" [trend]="-10"></span>
+    <span [vlahioCurrencyCell]="null" [cls]="'vlahio-mn-uah'"></span>
+    <span vlahioInfinityCell></span>
+    <span [vlahioInfinityCell]="null"></span>
+    <span [vlahioInfinityCell]="true"></span>
+    <span [vlahioSquareMetreCell]="58.25"></span>
+    <span [vlahioUpDownArrow]="trend"></span>
+    <span><span [vlahioUpDownArrow]="trend"></span> 45</span>
+```
 
-## Code scaffolding
+### Dom-Cell Worker Services
+```
+    constructor(private upDownArrowWorker: UpDownArrowWorker,
+                private trendElementWorker: TrendElementWorker,
+                private trendCellWorker: TrendCellWorker
+    ) {
+    }
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    ngOnInit(): void {
+      // this.upDownArrowWorker.render(val: number): HTMLSpanElement | undefined
+      const upDownArrowWorker = this.upDownArrowWorker.render(10);
 
-## Build
+      // this.trendElementWorker.render(trend: number, parent: HTMLElement, refChild: ChildNode): void
+      const parent = this.renderer.createElement('span');
+      const refChild = this.renderer.createText('45.56');
+      this.renderer.appendChild(parent, refChild);
+      const trendElementWorker = this.trendElementWorker.render(10, parent, refChild);
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+      // this.trendCellWorker.render(txt: any, cls?: string | string[], options: TrendCellWorkerOptionsInterface = {}): SafeHtml | null
+      const el = this.trendCellWorker.render(45.56, 'vlahio-mn-mn vlahio-mn-gbp', {trend: 10});
+    }
+```
 
-## Running unit tests
+### CSS styles
+```
+    /* You can add global styles to this file, and also import other style files */
+    @import "../../ngx-dom-cell/src/assets/css/ngx-dom-cell.css";
+    @import "../../ngx-dom-cell/src/assets/css/ngx-dom-cell-various.css";
+    @import "../../ngx-dom-cell/src/assets/css/ngx-dom-cell-table.css";
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For more details read [here](https://github.com/vlah-io/ngx-dom-cell/blob/master/INSTALLATION.md).

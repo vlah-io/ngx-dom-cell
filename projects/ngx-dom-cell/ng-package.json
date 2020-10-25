@@ -2,6 +2,11 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/ngx-dom-cell",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "@vlah.io/ngx-helper": "ngxHelper",
+      "@vlah.io/ngx-pipe": "ngxPipe",
+      "@vlah.io/ngx-worker": "ngxWorker"
+    }
   }
 }

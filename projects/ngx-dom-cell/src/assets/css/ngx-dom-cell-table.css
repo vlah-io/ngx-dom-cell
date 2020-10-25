@@ -1,0 +1,76 @@
+/** table resets */
+.vlahio-table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+div.k-t-r {
+  border: 1px solid #E8E8E8 !important;
+  padding: 2px !important;
+  font-size: 0.75rem !important;
+}
+
+table.k-t-r,
+div.k-t-r {
+  width: 100%;
+  margin: 0 !important;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+}
+table.k-t-r th,
+table.k-t-r td,
+div.k-t-r th,
+div.k-t-r td {
+  border: 1px solid #E8E8E8 !important;
+  padding: 2px !important;
+  font-size: 0.75rem !important;
+}
+table.k-t-r.k-t-n-b td,
+div.k-t-r.k-t-n-b td {
+  border: none !important;
+}
+table.k-t-r tr.k-src th,
+div.k-t-r tr.k-src th {
+  padding: 0 !important;
+  background-color: #F2F2F2 !important;
+}
+table.k-t-r tr.k-src th input,
+table.k-t-r tr.k-src th span,
+div.k-t-r tr.k-src th input,
+div.k-t-r tr.k-src th span {
+  padding: 2px !important;
+  border: none !important;
+  height: 20px !important;
+  background-color: #ffffff !important;
+  font-weight: normal !important;
+  width: calc(100% - 4px);
+  outline: none !important;
+}
+table.k-t-r tr.k-src th input:focus,
+div.k-t-r tr.k-src th input:focus {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+table.k-t-r tr.k-src th span,
+div.k-t-r tr.k-src th span {
+  cursor: pointer !important;
+}
+table.k-t-r a,
+div.k-t-r a {
+  margin: 0 !important;
+}
+table.k-t-r th, table.k-t-r.k-t-v tr td:not(.k-t-f-n):first-child,
+div.k-t-r th,
+div.k-t-r.k-t-v tr td:not(.k-t-f-n):first-child {
+  font-weight: bold !important;
+  color: #555;
+}
+table.k-t-r.k-t-nw tr td,
+div.k-t-r.k-t-nw tr td {
+  white-space: nowrap !important;
+}
+
+/*# sourceMappingURL=ngx-dom-cell-table.css.map */

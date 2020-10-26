@@ -1,6 +1,4 @@
-import {Component, Input, ViewChild} from '@angular/core';
-import {TrendElementWorker} from '../../service/trend-element.worker';
-import {TextCellComponent} from './text-cell.component';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'vlahio-number-cell',

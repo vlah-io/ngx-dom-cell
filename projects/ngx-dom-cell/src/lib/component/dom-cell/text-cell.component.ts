@@ -5,6 +5,6 @@ import {Component, Input} from '@angular/core';
   template: `<span [vlahioTextCell]="txt" [cls]="cls"></span>`
 })
 export class TextCellComponent {
-  @Input() txt: string | number;
-  @Input() cls: string | string[];
+  @Input() txt: string | number | undefined;
+  @Input() cls: string | string[] | undefined;
 }

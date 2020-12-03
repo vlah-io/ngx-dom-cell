@@ -22,7 +22,13 @@ describe('TrendElementWorker', () => {
       renderer.appendChild(parent, refChild);
       trendElementWorker.render(10, parent, refChild);
       expect(parent.innerHTML)
-        .toBe('<vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container"><span class="vlahio-arrow-icon up"></span></span></vlahio-up-down-arrow>46.50');
+        .toBe(
+          [
+            '<vlahio-up-down-arrow style="margin: 0px 5px;">',
+            '<span class="vlahio-arrow-container"><span class="vlahio-arrow-icon up"></span></span>',
+            '</vlahio-up-down-arrow>46.50'
+          ].join('')
+        );
     }
   );
 
@@ -34,7 +40,13 @@ describe('TrendElementWorker', () => {
       renderer.appendChild(parent, refChild);
       trendElementWorker.render(-10, parent, refChild);
       expect(parent.innerHTML)
-        .toBe('<vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container"><span class="vlahio-arrow-icon down"></span></span></vlahio-up-down-arrow>46.50');
+        .toBe(
+          [
+            '<vlahio-up-down-arrow style="margin: 0px 5px;">',
+            '<span class="vlahio-arrow-container"><span class="vlahio-arrow-icon down"></span></span>',
+            '</vlahio-up-down-arrow>46.50'
+          ].join('')
+        );
     }
   );
 });

@@ -5,8 +5,8 @@ import {Component, Input} from '@angular/core';
   template: `<span [vlahioCalendarCell]="value" [format]="format" [locale]="locale" [timezone]="timezone"></span>`
 })
 export class CalendarCellComponent {
-  @Input() format: string;
-  @Input() timezone: string;
-  @Input() locale: string;
-  @Input() value: string | number;
+  @Input() format: string | undefined;
+  @Input() timezone: string | undefined;
+  @Input() locale: string | undefined;
+  @Input() value: string | number | undefined;
 }

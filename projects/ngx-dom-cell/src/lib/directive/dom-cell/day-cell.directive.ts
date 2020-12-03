@@ -6,13 +6,13 @@ import {TrendCellWorker} from '../../service/trend-cell.worker';
   selector: '[vlahioDayCell]'
 })
 export class DayCellDirective {
-  @Input('vlahioDayCell') txt: number | string | null;
+  @Input('vlahioDayCell') txt: number | string | null | undefined;
 
   constructor(private trendCellWorker: TrendCellWorker) {
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
     return this.trendCellWorker.render(this.txt, 'vlahio-dy');
   }
 }

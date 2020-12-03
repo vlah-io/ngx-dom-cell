@@ -5,6 +5,6 @@ import {Component, Input} from '@angular/core';
   template: `<span [vlahioSquareMetreCell]="value" [trend]="trend"></span>`
 })
 export class SquareMetreCellComponent {
-  @Input() value: number | string | null;
-  @Input() trend: number;
+  @Input() value: number | string | null | undefined;
+  @Input() trend: number | undefined;
 }

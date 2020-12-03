@@ -6,14 +6,14 @@ import {TrendCellWorker} from '../../service/trend-cell.worker';
   selector: '[vlahioTextCell]'
 })
 export class TextCellDirective {
-  @Input('vlahioTextCell') txt: string | number;
-  @Input() cls: string | string[];
+  @Input('vlahioTextCell') txt: string | number | null | undefined;
+  @Input() cls: string | string[] | undefined;
 
   constructor(private domCelWorker: TrendCellWorker) {
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
     return this.domCelWorker.render(this.txt, this.cls);
   }
 }

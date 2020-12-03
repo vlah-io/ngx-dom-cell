@@ -1,7 +1,7 @@
 import {Injectable, Renderer2, RendererFactory2} from '@angular/core';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {TrendElementWorker} from './trend-element.worker';
-import {StringHelper} from '@vlah.io/ngx-helper';
+import {ObjectHelper, StringHelper} from '@vlah.io/ngx-helper';
 import {TrendCellWorkerOptionsInterface} from '../interface/ngx-dom-cell.interface';
 
 @Injectable({
@@ -17,13 +17,10 @@ export class TrendCellWorker {
     this.renderer = rendererFactory2.createRenderer(null, null);
   }
 
-  render(txt: any,
-         cls?: string | string[],
+  render(txt: string | number | null | undefined,
+         cls: string | string[] | undefined,
          options: TrendCellWorkerOptionsInterface = {}): SafeHtml | null {
-    if ([
-      '[object String]',
-      '[object Number]'
-    ].indexOf(Object.prototype.toString.call(txt)) === -1) {
+    if (txt === undefined || txt === null || !ObjectHelper.isStringOrNumberObject(txt)) {
       return null;
     }
 
@@ -33,11 +30,9 @@ export class TrendCellWorker {
     const textElement = this.renderer.createText(txt.toString());
     this.renderer.appendChild(el, textElement);
 
-    const cssClassArray = StringHelper.cssClassNameToArray(cls, ['vlahio-fm']);
+    const cssClassArray = StringHelper.cssClassNameToArray(cls || [], ['vlahio-fm']);
     cssClassArray.forEach(
-      (className: string) => {
-        this.renderer.addClass(el, className);
-      }
+      (className: string) => this.renderer.addClass(el, className)
     );
 
     if (trend) {

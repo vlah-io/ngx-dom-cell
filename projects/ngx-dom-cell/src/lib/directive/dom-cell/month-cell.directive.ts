@@ -6,13 +6,13 @@ import {TrendCellWorker} from '../../service/trend-cell.worker';
   selector: '[vlahioMonthCell]'
 })
 export class MonthCellDirective {
-  @Input('vlahioMonthCell') txt: number | string | null;
+  @Input('vlahioMonthCell') txt: number | string | null | undefined;
 
   constructor(private trendCellWorker: TrendCellWorker) {
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
     return this.trendCellWorker.render(this.txt, 'vlahio-mo');
   }
 }

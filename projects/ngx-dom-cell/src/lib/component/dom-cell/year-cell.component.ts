@@ -5,5 +5,5 @@ import {Component, Input} from '@angular/core';
   template: `<span [vlahioYearCell]="value"></span>`
 })
 export class YearCellComponent {
-  @Input() value: number | string | null;
+  @Input() value: number | string | null | undefined;
 }

@@ -10,50 +10,50 @@ import {CurrencyPipe} from '@angular/common';
   selector: '[vlahioGbpCurrencyCell]'
 })
 export class GbpCurrencyCellDirective {
-  cls = 'vlahio-mn-gbp';
-  @Input() trend: number | null;
-  private amount: number | string | null;
-  private digits: string;
+  @Input() trend: number | null | undefined;
+  private class = 'vlahio-mn-gbp';
+  private currencyAmount: number | string | null | undefined;
+  private decimals: string | undefined;
 
   constructor(private trendCellWorker: TrendCellWorker,
               @Inject(VLAHIO_DOM_CELL_CONFIG) private configs: DomCellConfigInterface
   ) {
   }
 
-  @Input('cls')
-  set _cls(str: string) {
-    this.cls = str;
+  @Input()
+  set cls(str: string) {
+    this.class = str;
   }
 
   @Input('vlahioGbpCurrencyCell')
-  set _amount(amount: number | string | null) {
+  set amount(amount: number | string | null) {
     if (MathHelper.isNumber(amount)) {
-      this.amount = amount;
+      this.currencyAmount = amount;
     }
   }
 
-  @Input('digits')
-  set _digits(digits: number) {
+  @Input()
+  set digits(digits: number) {
     if (MathHelper.isNumber(digits)) {
-      this.digits = `1.0-${digits}`;
+      this.decimals = `1.0-${digits}`;
     }
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
     let cls = ['vlahio-mn'];
-    if (this.cls) {
-      cls = [...cls, ...this.cls.trim().split(' ')];
+    if (this.class) {
+      cls = [...cls, ...this.class.trim().split(' ')];
     }
     return this.trendCellWorker.render(this.amount$(), cls, {trend: this.trend});
   }
 
   amount$(): string | number | null | undefined {
-    if (this.amount) {
+    if (this.currencyAmount) {
       const currency: CurrencyPipe = new CurrencyPipe(this.configs.locale || 'en-US');
-      return currency.transform(this.amount, '', '', this.digits);
+      return currency.transform(this.currencyAmount, '', '', this.decimals);
     }
 
-    return this.amount;
+    return this.currencyAmount;
   }
 }

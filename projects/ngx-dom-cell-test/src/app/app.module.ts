@@ -5,6 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NgxDomCellModule} from '../../../ngx-dom-cell/src/lib/ngx-dom-cell.module';
 import {ComComponent} from './dom-cell/com.component';
+import {DirComponent} from './dom-cell/dir.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {ComComponent} from './dom-cell/com.component';
   ],
   declarations: [
     AppComponent,
-    ComComponent
+    ComComponent,
+    DirComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

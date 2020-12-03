@@ -6,7 +6,7 @@ Package generated with `angular-cli` as follows
 ### Create new
 
 ```
-  ng new ngx-dom-cell --createApplication=false --prefix=vlah
+  ng new ngx-dom-cell --createApplication=false --prefix=vlahio
   cd ngx-dom-cell
 ```
 
@@ -14,7 +14,7 @@ Package generated with `angular-cli` as follows
 
 ```
   cd ngx-dom-cell
-  ng generate library ngx-dom-cell --prefix=vlah
+  ng generate library ngx-dom-cell --prefix=vlahio
 ```
 
 ### Generate test application

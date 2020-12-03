@@ -6,14 +6,19 @@ import {TrendCellWorker} from '../../service/trend-cell.worker';
   selector: '[vlahioInfinityCell]'
 })
 export class InfinityCellDirective {
-  @Input('vlahioInfinityCell') visible: boolean;
+  private isVisible: boolean | undefined;
 
   constructor(private domCelWorker: TrendCellWorker) {
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
-    if (this.visible !== true) {
+  @Input('vlahioInfinityCell')
+  set visible(bool: string | boolean | null | undefined) {
+    this.isVisible = bool === true;
+  }
+
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
+    if (!this.isVisible) {
       return null;
     }
 

@@ -5,5 +5,5 @@ import {Component, Input} from '@angular/core';
   template: `<span [vlahioMonthCell]="value"></span>`
 })
 export class MonthCellComponent {
-  @Input() value: number | string | null;
+  @Input() value: number | string | null | undefined;
 }

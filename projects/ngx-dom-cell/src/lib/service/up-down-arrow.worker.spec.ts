@@ -12,14 +12,16 @@ describe('UpDownArrowWorker', () => {
   it(
     'should return up arrow',
     () => {
-      expect(upDownArrowWorker.render(10).innerHTML).toBe('<span class="vlahio-arrow-icon up"></span>');
+      expect(upDownArrowWorker.render(10)?.innerHTML)
+        .toBe('<span class="vlahio-arrow-icon up"></span>');
     }
   );
 
   it(
     'should return down arrow',
     () => {
-      expect(upDownArrowWorker.render(-10).innerHTML).toBe('<span class="vlahio-arrow-icon down"></span>');
+      expect(upDownArrowWorker.render(-10)?.innerHTML)
+        .toBe('<span class="vlahio-arrow-icon down"></span>');
     }
   );
 });

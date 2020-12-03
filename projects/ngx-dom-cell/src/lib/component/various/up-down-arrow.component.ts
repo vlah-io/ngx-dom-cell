@@ -15,8 +15,8 @@ export class UpDownArrowComponent {
   ) {
   }
 
-  @Input('value')
-  set _value(val: number) {
+  @Input()
+  set value(val: number) {
     this.rendererWorker.removeChildNodes(this.elRef.nativeElement);
     const el = this.upDownArrowWorker.render(val);
     if (el) {

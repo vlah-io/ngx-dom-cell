@@ -7,25 +7,31 @@ import {TrendCellWorker} from '../../service/trend-cell.worker';
   selector: '[vlahioCalendarCell]'
 })
 export class CalendarCellDirective {
-  @Input('vlahioCalendarCell') txt: string | number;
-  @Input() format: string;
-  @Input() timezone: string;
-  @Input() locale: string;
+  @Input('vlahioCalendarCell') txt: string | number | undefined;
+  @Input() format: string | undefined;
+  @Input() timezone: string | undefined;
+  @Input() locale: string | undefined;
 
   constructor(private trendCellWorker: TrendCellWorker,
               private datePipe: VlahioDatePipe
   ) {
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
-    return this.trendCellWorker.render(this.datePipe.transform(
-      this.txt.toString(),
-      this.format,
-      this.timezone,
-      this.locale
-      ),
-      'vlahio-cl'
-    );
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
+    if (this.txt === undefined) {
+      return null;
+    }
+
+    return this.trendCellWorker
+      .render(
+        this.datePipe.transform(
+          this.txt.toString(),
+          this.format,
+          this.timezone,
+          this.locale
+        ),
+        'vlahio-cl'
+      );
   }
 }

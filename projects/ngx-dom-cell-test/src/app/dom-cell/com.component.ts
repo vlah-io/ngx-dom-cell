@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-dom-cell-component',
+  selector: 'app-com-cell-component',
   templateUrl: './com.component.html'
 })
 export class ComComponent implements OnInit {

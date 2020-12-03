@@ -6,14 +6,14 @@ import {TrendCellWorker} from '../../service/trend-cell.worker';
   selector: '[vlahioPercentCell]'
 })
 export class PercentCellDirective {
-  @Input() trend: number | null;
-  @Input('vlahioPercentCell') txt: number | string | null;
+  @Input('vlahioPercentCell') txt: number | string | null | undefined;
+  @Input() trend: number | null | undefined;
 
   constructor(private trendCellWorker: TrendCellWorker) {
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
     return this.trendCellWorker.render(this.txt, 'vlahio-pc', {trend: this.trend});
   }
 }

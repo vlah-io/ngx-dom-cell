@@ -5,5 +5,5 @@ import {Component, Input} from '@angular/core';
   template: `<span [vlahioInfinityCell]="visible"></span>`
 })
 export class InfinityCellComponent {
-  @Input() visible: boolean;
+  @Input() visible: boolean | null | undefined;
 }

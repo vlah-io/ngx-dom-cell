@@ -3,6 +3,6 @@ export interface DomCellConfigInterface {
 }
 
 export interface TrendCellWorkerOptionsInterface {
-  returnInnerHTML?: boolean;
-  trend?: number;
+  returnInnerHTML?: boolean | undefined;
+  trend?: number | null | undefined;
 }

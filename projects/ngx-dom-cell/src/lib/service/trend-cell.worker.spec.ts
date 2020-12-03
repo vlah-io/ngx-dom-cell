@@ -13,10 +13,16 @@ describe('TrendCellWorker', () => {
     'should return up arrow outer dom cell element',
     () => {
       expect(
-        (trendCellWorker.render(46.50, 'vlahio-fm-mn vlahio-fm-gbp', {trend: 10}) as any).changingThisBreaksApplicationSecurity
+        (trendCellWorker.render(46.50, 'vlahio-fm-mn vlahio-fm-gbp', {trend: 10}) as any)
+          .changingThisBreaksApplicationSecurity
       )
         .toBe(
-          '<span class="vlahio-fm vlahio-fm-mn vlahio-fm-gbp"><vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container"><span class="vlahio-arrow-icon up"></span></span></vlahio-up-down-arrow>46.5</span>'
+          [
+            '<span class="vlahio-fm vlahio-fm-mn vlahio-fm-gbp">',
+            '<vlahio-up-down-arrow style="margin: 0px 5px;">',
+            '<span class="vlahio-arrow-container"><span class="vlahio-arrow-icon up"></span></span>',
+            '</vlahio-up-down-arrow>46.5</span>'
+          ].join('')
         );
     }
   );
@@ -25,10 +31,15 @@ describe('TrendCellWorker', () => {
     'should return down arrow outer dom cell element',
     () => {
       expect(
-        (trendCellWorker.render(46.50, 'vlahio-fm-mn vlahio-fm-gbp', {trend: -10}) as any).changingThisBreaksApplicationSecurity
+        (trendCellWorker.render(46.50, 'vlahio-fm-mn vlahio-fm-gbp', {trend: -10}) as any)
+          .changingThisBreaksApplicationSecurity
       )
         .toBe(
-          '<span class="vlahio-fm vlahio-fm-mn vlahio-fm-gbp"><vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container"><span class="vlahio-arrow-icon down"></span></span></vlahio-up-down-arrow>46.5</span>'
+          [
+            '<span class="vlahio-fm vlahio-fm-mn vlahio-fm-gbp">',
+            '<vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container">',
+            '<span class="vlahio-arrow-icon down"></span></span></vlahio-up-down-arrow>46.5</span>'
+          ].join('')
         );
     }
   );
@@ -43,7 +54,10 @@ describe('TrendCellWorker', () => {
         }) as any).changingThisBreaksApplicationSecurity
       )
         .toBe(
-          '<vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container"><span class="vlahio-arrow-icon up"></span></span></vlahio-up-down-arrow>46.5'
+          [
+            '<vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container">',
+            '<span class="vlahio-arrow-icon up"></span></span></vlahio-up-down-arrow>46.5'
+          ].join('')
         );
     }
   );
@@ -58,7 +72,10 @@ describe('TrendCellWorker', () => {
         }) as any).changingThisBreaksApplicationSecurity
       )
         .toBe(
-          '<vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container"><span class="vlahio-arrow-icon down"></span></span></vlahio-up-down-arrow>46.5'
+          [
+            '<vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container">',
+            '<span class="vlahio-arrow-icon down"></span></span></vlahio-up-down-arrow>46.5'
+          ].join('')
         );
     }
   );
@@ -72,7 +89,11 @@ describe('TrendCellWorker', () => {
         }) as any).changingThisBreaksApplicationSecurity
       )
         .toBe(
-          '<span class="vlahio-fm"><vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container"><span class="vlahio-arrow-icon up"></span></span></vlahio-up-down-arrow>46.5</span>'
+          [
+            '<span class="vlahio-fm"><vlahio-up-down-arrow style="margin: 0px 5px;">',
+            '<span class="vlahio-arrow-container"><span class="vlahio-arrow-icon up"></span></span>',
+            '</vlahio-up-down-arrow>46.5</span>'
+          ].join('')
         );
     }
   );
@@ -86,7 +107,11 @@ describe('TrendCellWorker', () => {
         }) as any).changingThisBreaksApplicationSecurity
       )
         .toBe(
-          '<span class="vlahio-fm"><vlahio-up-down-arrow style="margin: 0px 5px;"><span class="vlahio-arrow-container"><span class="vlahio-arrow-icon down"></span></span></vlahio-up-down-arrow>46.5</span>'
+          [
+            '<span class="vlahio-fm"><vlahio-up-down-arrow style="margin: 0px 5px;">',
+            '<span class="vlahio-arrow-container"><span class="vlahio-arrow-icon down"></span></span>',
+            '</vlahio-up-down-arrow>46.5</span>'
+          ].join('')
         );
     }
   );

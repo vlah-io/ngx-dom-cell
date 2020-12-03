@@ -5,6 +5,6 @@ import {Component, Input} from '@angular/core';
   template: `<span [vlahioTextCell]="value" [cls]="cls"></span>`
 })
 export class FormatCellComponent {
-  @Input() value: number | string | null;
-  @Input() cls: string | string[];
+  @Input() value: number | string | null | undefined;
+  @Input() cls: string | string[] | undefined;
 }

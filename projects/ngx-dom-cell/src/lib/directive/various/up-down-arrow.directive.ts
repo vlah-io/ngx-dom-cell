@@ -15,7 +15,7 @@ export class UpDownArrowDirective {
   }
 
   @Input('vlahioUpDownArrow')
-  set _value(val: number) {
+  set value(val: number) {
     this.rendererWorker.removeChildNodes(this.elRef.nativeElement);
     const el = this.upDownArrowWorker.render(val);
     if (el) {

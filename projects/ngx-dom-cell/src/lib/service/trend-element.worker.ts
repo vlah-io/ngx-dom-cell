@@ -15,7 +15,7 @@ export class TrendElementWorker {
 
   render(trend: number, parent: HTMLElement, refChild: ChildNode): void {
     const compRef = this.factoryWorker.make(UpDownArrowComponent);
-    compRef.instance._value = trend;
+    compRef.instance.value = trend;
     const el = compRef.location.nativeElement;
     this.factoryWorker.destroy(compRef);
 

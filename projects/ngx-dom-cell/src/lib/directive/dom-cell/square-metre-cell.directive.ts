@@ -6,14 +6,14 @@ import {TrendCellWorker} from '../../service/trend-cell.worker';
   selector: '[vlahioSquareMetreCell]'
 })
 export class SquareMetreCellDirective {
-  @Input() trend: number | null;
-  @Input('vlahioSquareMetreCell') txt: number | string | null;
+  @Input('vlahioSquareMetreCell') txt: number | string | null | undefined;
+  @Input() trend: number | null | undefined;
 
   constructor(private trendCellWorker: TrendCellWorker) {
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
     return this.trendCellWorker.render(this.txt, 'vlahio-sq-mt', {trend: this.trend});
   }
 }

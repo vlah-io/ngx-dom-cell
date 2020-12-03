@@ -6,14 +6,14 @@ import {TrendCellWorker} from '../../service/trend-cell.worker';
   selector: '[vlahioYearsCell]'
 })
 export class YearsCellDirective {
-  @Input() trend: number | null;
-  @Input('vlahioYearsCell') txt: number | string | null;
+  @Input('vlahioYearsCell') txt: number | string | null | undefined;
+  @Input() trend: number | null | undefined;
 
   constructor(private trendCellWorker: TrendCellWorker) {
   }
 
-  @HostBinding('innerHtml')
-  get _innerHTML(): SafeHtml | null {
+  @HostBinding()
+  get innerHTML(): SafeHtml | null {
     return this.trendCellWorker.render(this.txt, 'vlahio-yr-s', {trend: this.trend});
   }
 }
